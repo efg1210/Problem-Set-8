@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/css.css">
-        <script rel="text" src="homepage-js.js"></script>
+        <link rel="stylesheet" href="../css/css.css">
+        <script rel="text" src="../js/homepage-js.js"></script>
     </head>
     <body>
+        <div id="header">
+            <div class="center">
+                <a href="index.html"><button class="header-button">Home</button></a>
+                <a href="cipher.html"><button class="header-button">Cipher</button></a>
+            </div>
+        </div>
         
+        <div id="tabs">
+            <button class="tab-btn" id="c-tab-btn">Caesar</button>
+            <button class="tab-btn" id="v-tab-btn">Vigen&eacutere</button>
+            <div id="c-tab">
+                <p>This is a Caesar cipher.</p>
+            </div>
+            <div id="v-tab">
+                <p>This is a Vigen&eacutere cipher.</p>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <p style="text-align: center;">&copy;March 19th 2018, UCVTS, AIT, AP Computer Science Principles 7/8</p>
+        </div>
     </body>
 </html>

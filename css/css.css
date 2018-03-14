@@ -1,3 +1,55 @@
-body {
+#header {
+    background-color: #42dff4;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 60px;
+    padding-top: 8px;
+}
 
+#footer {
+    background-color: #42dff4;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+}
+
+body {
+    background-color: #4186f4;
+}
+
+.header-button {
+    height: 50px;
+    width: 100px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4186f4;
+    transition-duration: 0.3s;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+button:hover.header-button {
+    background-color: #4186f4;
+    color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+#tabs {
+    margin: 75px;
+    padding: 5%;
+}
+
+.tab-btn {
+    width: 45%;
 }
