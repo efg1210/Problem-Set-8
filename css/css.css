@@ -49,7 +49,6 @@ button:hover.header-button {
 #tabs {
     display: block;
     margin: 5%;
-    border: 1px solid black;
 }
 
 .tab-btn {
