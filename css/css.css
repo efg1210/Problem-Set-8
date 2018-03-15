@@ -1,10 +1,11 @@
 #header {
+    display: block;
     background-color: #42dff4;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
-    height: 60px;
+    height: 10%;
     padding-top: 8px;
 }
 
@@ -23,7 +24,7 @@ body {
 
 .header-button {
     height: 50px;
-    width: 100px;
+    width: 10%;
     font-family: sans-serif;
     font-size: 15px;
     font-weight: bold;
@@ -47,10 +48,31 @@ button:hover.header-button {
 
 #tabs {
     display: block;
-    /*margin: 75px;
-    padding: 5%;*/
+    margin: 5%;
+    border: 1px solid black;
 }
 
 .tab-btn {
-    width: 45%;
+    margin: none;
+    padding: 0;
+    margin-top: 5%;
+    height: 40px;
+    width: 49.5%;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    background-color: white;
+    color: black;
+    transition-duration: 0.3s;
+}
+
+button:hover.tab-btn {
+    background-color: #42dff4;
+}
+
+#tab-containter {
+    width: 100%;
+    font-size: 0;
 }
