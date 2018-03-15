@@ -13,14 +13,14 @@
         </div>
         
         <div id="tabs">
-            <div id="tab-container">
-            <button class="tab-btn" id="c-tab-btn">Caesar</button>
-            <button class="tab-btn" id="v-tab-btn">Vigen&eacutere</button>
-            </div>
-            <div id="c-tab">
+            <button class="tab-btn" id="c-tab-btn" onclick="change('c')">Caesar</button>
+            <button class="tab-btn" id="v-tab-btn" onclick="change('v')">Vigen&eacutere</button>
+            
+            <div id="c-tab" class="text-explain">
                 <p>This is a Caesar cipher.</p>
             </div>
-            <div id="v-tab">
+            
+            <div id="v-tab"  class="text-explain">
                 <p>This is a Vigen&eacutere cipher.</p>
             </div>
         </div>
