@@ -1,4 +1,10 @@
-function caesarEncrypt(key) {
+var ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function submit(){
+  if()
+}
+
+function caesarEncrypt(message, key) {
     var message = document.getElementById('input-box')
     var encryptedResult = "";
 
