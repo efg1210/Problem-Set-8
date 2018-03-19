@@ -46,7 +46,7 @@ button:hover.header-button {
     text-align: center;
 }
 
-#tabs {
+#tabs, #middle{
     display: block;
     margin: 5%;
 }

@@ -1,11 +1,17 @@
 var ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function submit(){
-  if()
+  var message = document.getElementById('input-box');
+  var type = document.getElementById('type')
+  var direction = document.getElementById('direction');
+  var key = prompt("Key:");
+
+  if(type == "c" && dirction == "encode"){
+    caesarEncrypt(message, key);
+  }
 }
 
 function caesarEncrypt(message, key) {
-    var message = document.getElementById('input-box')
     var encryptedResult = "";
 
     for(var i = 0; i < message.length; i++)
