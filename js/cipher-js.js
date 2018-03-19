@@ -14,11 +14,55 @@ function submit1(e){
   if(type == "c" && direction == "encode"){
     showResult(caesarEncrypt(message, key));
   }else if(type == "c" && direction =="decode"){
-    showResult()
+    showResult(caesarDecrypt(message, key))
   }
 }
 
 function caesarEncrypt(message, key) {
+    var encryptedResult = "";
+
+    for(var i = 0; i < message.length; i++)
+    {
+        // Get the character in the original message
+        var originalCharacter = message.charAt(i);
+
+        // If it's an alphabetical character, we'll compute the new
+        // shifted character and add it to the encrypted result
+        if(ALPHABET.indexOf(originalCharacter) > 0){
+          var alphabeticIndex = ALPHABET.indexOf(originalCharacter);
+          if(alphabeticIndex >= 0){
+              // Compute new index
+              var newIndex = alphabeticIndex + key;
+              newIndex = newIndex % ALPHABET.length;
+
+              // Get the new character
+              var newCharacter = ALPHABET.charAt(newIndex);
+
+              // Add the new shifted character to the encrypted result
+              encryptedResult += newCharacter
+          }
+        }else if(alphabet.indexOf(originalCharacter) > 0){
+          var alphabeticIndex = alphabet.indexOf(originalCharacter);
+          if(alphabeticIndex >= 0){
+              // Compute new index
+              var newIndex = alphabeticIndex + key;
+              newIndex = newIndex % alphabet.length;
+
+              // Get the new character
+              var newCharacter = alphabet.charAt(newIndex);
+
+              // Add the new shifted character to the encrypted result
+              encryptedResult += newCharacter
+          }
+        }else{
+          encryptedResult += originalCharacter;
+        }
+    }
+    return encryptedResult;
+}
+
+function caesarDecrypt(message, key) {
+    key *= -1;
     var encryptedResult = "";
 
     for(var i = 0; i < message.length; i++)
