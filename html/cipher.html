@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Ciphers</title>
         <link rel="stylesheet" href="../css/css.css">
         <script rel="text" src="../js/cipher-js.js"></script>
     </head>
@@ -14,15 +15,15 @@
 
         <div id="middle">
           <form onsubmit="submit1(event)">
-            <textarea type="text" name="message" id="input-box" class="box" style="resize: none;"></textarea>
+            <textarea type="text" name="message" id="input-box" class="box" style="resize: none;" required></textarea>
 
-            <select name="type" id="type" class="between">
+            <select name="type" id="type" class="between" required>
                 <option disabled selected value>Select Type</option>
                 <option value="c">Caesar</option>
                 <option value="v">Vigen&eacutere</option>
             </select>
 
-            <select name="direction" id="direction" class="between">
+            <select name="direction" id="direction" class="between" onchang="nameSubmit(event)" required>
                 <option disabled selected value>Select Direction</option>
                 <option value="encode">Encode</option>
                 <option value="decode">Decode</option>
@@ -33,7 +34,7 @@
         </div>
 
         <div id="footer">
-            <p style="text-align: center;">&copy;March 19th 2018, UCVTS, AIT, AP Computer Science Principles 7/8</p>
+            <p style="text-align: center;">&copy;March 19th 2018, UCVTS, AIT, AP Computer Science Principles A 7/8</p>
         </div>
     </body>
 </html>

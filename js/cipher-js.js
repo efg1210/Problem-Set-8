@@ -21,7 +21,7 @@ function submit1(e){
     console.log(!(type == "c" && !isNaN(parseInt(key))));
     //done until this is true
   }while((type == "c" && isNaN(parseInt(key))) || (type == "v" && !isNaN(parseInt(key)) && message.length >= key.length));
-  
+
 
   if(type == "c" && direction == "encode"){
     key = parseInt(key);
@@ -233,4 +233,13 @@ function vigDecrypt(message, key){
 
 function showResult(result){
   document.getElementById("result").innerHTML = result;
+}
+
+function nameSubmit(e){
+  var direction = e.target.direction.value;
+  if(direction == "encode"){
+    e.target.submit.value = "Encode!";
+  }else if(direction == "decode"){
+    e.target.submit.value = "Decode!";
+  }
 }
