@@ -10,17 +10,18 @@ function submit1(e){
   var type = e.target.type.value;
   var direction = e.target.direction.value;
   var key;
-  /*
+
+
   do{
-  */
+
     key = prompt("Key:");
-    /*
+
     console.log(type);
     console.log(isNaN(parseInt(key)));
     console.log(!(type == "c" && !isNaN(parseInt(key))));
     //done until this is true
-  }while((type == "c" && !isNaN(parseInt(key))) || (type == "v" && isNaN(parseInt(key)) && message.length >= key.length));
-  */
+  }while((type == "c" && isNaN(parseInt(key))) || (type == "v" && !isNaN(parseInt(key)) && message.length >= key.length));
+  
 
   if(type == "c" && direction == "encode"){
     key = parseInt(key);
