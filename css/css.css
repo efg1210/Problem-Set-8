@@ -24,8 +24,8 @@ body {
 }
 
 .header-button {
-    height: 5%;
-    width: 10%;
+    height: 2.5vw;
+    width: 10vw;
     font-family: sans-serif;
     font-size: 15px;
     font-weight: bold;
@@ -49,19 +49,18 @@ button:hover.header-button {
 
 #tabs{
     margin: 5%;
-    margin-top: 5%;
+    margin-top: 11.5vw;
 }
 
 #middle {
     display: block;
     margin: 5%;
-    margin-top: 5%;
+    margin-top: 11.5vw;
 }
 
 .tab-btn {
     margin: none;
     padding: 0;
-    /*margin-top: 5%;*/
     height: 30px;
     font-family: sans-serif;
     font-size: 15px;
@@ -87,8 +86,14 @@ button:hover.tab-btn {
     padding-bottom: none;
 }
 
-textarea, select, input {
+textarea {
   width: 100%;
+}
+
+select, input {
+  display: block;
+  width: 25%;
+  margin: auto;
 }
 
 #to-flex {
@@ -98,4 +103,17 @@ textarea, select, input {
 
 .flex-item {
   flex: 1;
+}
+
+#input-box {
+  margin-bottom: 3%;
+}
+
+#result {
+  margin-top: 3%
+}
+
+#direction{
+  margin-top: 1%;
+  margin-bottom: 1%;
 }

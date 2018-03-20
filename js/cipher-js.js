@@ -13,9 +13,7 @@ function submit1(e){
 
 
   do{
-
     key = prompt("Key:");
-
     console.log(type);
     console.log(isNaN(parseInt(key)));
     console.log(!(type == "c" && !isNaN(parseInt(key))));
@@ -236,13 +234,13 @@ function showResult(result){
 }
 
 function nameSubmit(e){
-  //var direction = e.target.direction.value;
-  console.log(direction);
-  direction = document.getElementById("direction").value;
-  console.log(direction);
-  if(direction == "encode"){
-    e.target.submit.value = "Encode!";
-  }else if(direction == "decode"){
-    e.target.submit.value = "Decode!";
+  //var direction4 = e.target.direction.value;
+  //console.log(direction4);
+  var direction4 = document.getElementById("direction").value;
+  console.log(direction4);
+  if(direction4 == "encode"){
+    document.getElementById("submit").value = "Encode!";
+  }else if(direction4 == "decode"){
+    document.getElementById("submit").value = "Decode!";
   }
 }
