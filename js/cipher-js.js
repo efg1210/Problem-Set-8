@@ -4,7 +4,7 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 function submit1(e){
   e.preventDefault();
-  console.log(e.target.message.value);
+  //console.log(e.target.message.value);
 
   var message = String(e.target.message.value);
   var type = e.target.type.value;
@@ -14,9 +14,9 @@ function submit1(e){
 
   do{
     key = prompt("Key:");
-    console.log(type);
-    console.log(isNaN(parseInt(key)));
-    console.log(!(type == "c" && !isNaN(parseInt(key))));
+    //console.log(type);
+    //console.log(isNaN(parseInt(key)));
+    //console.log(!(type == "c" && !isNaN(parseInt(key))));
     //done until this is true
   }while((type == "c" && isNaN(parseInt(key))) || (type == "v" && !isNaN(parseInt(key)) && message.length >= key.length));
 
@@ -44,7 +44,7 @@ function caesarEncrypt(message, key) {
 
         // If it's an alphabetical character, we'll compute the new
         // shifted character and add it to the encrypted result
-        if(ALPHABET.indexOf(originalCharacter) > 0){
+        if(ALPHABET.indexOf(originalCharacter) >= 0){
           var alphabeticIndex = ALPHABET.indexOf(originalCharacter);
           if(alphabeticIndex >= 0){
               // Compute new index
@@ -57,7 +57,7 @@ function caesarEncrypt(message, key) {
               // Add the new shifted character to the encrypted result
               encryptedResult += newCharacter
           }
-        }else if(alphabet.indexOf(originalCharacter) > 0){
+        }else if(alphabet.indexOf(originalCharacter) >= 0){
           var alphabeticIndex = alphabet.indexOf(originalCharacter);
           if(alphabeticIndex >= 0){
               // Compute new index
@@ -88,7 +88,7 @@ function caesarDecrypt(message, key) {
 
         // If it's an alphabetical character, we'll compute the new
         // shifted character and add it to the encrypted result
-        if(ALPHABET.indexOf(originalCharacter) > 0){
+        if(ALPHABET.indexOf(originalCharacter) >= 0){
           var alphabeticIndex = ALPHABET.indexOf(originalCharacter);
           if(alphabeticIndex >= 0){
               // Compute new index
@@ -101,11 +101,16 @@ function caesarDecrypt(message, key) {
               // Add the new shifted character to the encrypted result
               encryptedResult += newCharacter
           }
-        }else if(alphabet.indexOf(originalCharacter) > 0){
+        }else if(alphabet.indexOf(originalCharacter) >= 0){
           var alphabeticIndex = alphabet.indexOf(originalCharacter);
           if(alphabeticIndex >= 0){
               // Compute new index
               var newIndex = alphabeticIndex + key;
+              /*
+              if(newIndex < 0){
+                newIndex += 26;
+              }
+              */
               newIndex = newIndex % alphabet.length;
 
               // Get the new character
@@ -137,7 +142,7 @@ function findKey(key){
       newKeyArray.push(index);
     }
   }
-  console.log(newKeyArray);
+  ////console.log(newKeyArray);
   return newKeyArray;
 }
 
@@ -152,7 +157,7 @@ function vigEncrypt(message, key){
 
       // If it's an alphabetical character, we'll compute the new
       // shifted character and add it to the encrypted result
-      if(ALPHABET.indexOf(originalCharacter) > 0){
+      if(ALPHABET.indexOf(originalCharacter) >= 0){
         var alphabeticIndex = ALPHABET.indexOf(originalCharacter);
         if(alphabeticIndex >= 0){
             // Compute new index
@@ -165,7 +170,7 @@ function vigEncrypt(message, key){
             // Add the new shifted character to the encrypted result
             encryptedResult += newCharacter
         }
-      }else if(alphabet.indexOf(originalCharacter) > 0){
+      }else if(alphabet.indexOf(originalCharacter) >= 0){
         var alphabeticIndex = alphabet.indexOf(originalCharacter);
         if(alphabeticIndex >= 0){
             // Compute new index
@@ -196,7 +201,7 @@ function vigDecrypt(message, key){
 
       // If it's an alphabetical character, we'll compute the new
       // shifted character and add it to the encrypted result
-      if(ALPHABET.indexOf(originalCharacter) > 0){
+      if(ALPHABET.indexOf(originalCharacter) >= 0){
         var alphabeticIndex = ALPHABET.indexOf(originalCharacter);
         if(alphabeticIndex >= 0){
             // Compute new index
@@ -209,7 +214,7 @@ function vigDecrypt(message, key){
             // Add the new shifted character to the encrypted result
             encryptedResult += newCharacter
         }
-      }else if(alphabet.indexOf(originalCharacter) > 0){
+      }else if(alphabet.indexOf(originalCharacter) >= 0){
         var alphabeticIndex = alphabet.indexOf(originalCharacter);
         if(alphabeticIndex >= 0){
             // Compute new index
@@ -235,9 +240,9 @@ function showResult(result){
 
 function nameSubmit(e){
   //var direction4 = e.target.direction.value;
-  //console.log(direction4);
+  ////console.log(direction4);
   var direction4 = document.getElementById("direction").value;
-  console.log(direction4);
+  //console.log(direction4);
   if(direction4 == "encode"){
     document.getElementById("submit").value = "Encode!";
   }else if(direction4 == "decode"){
