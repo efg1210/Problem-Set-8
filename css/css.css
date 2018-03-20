@@ -5,8 +5,7 @@
     left: 0;
     right: 0;
     top: 0;
-    height: 6%;
-    padding-top: 0.5%;
+    height: 3vw;
 }
 
 #footer {
@@ -34,7 +33,7 @@ body {
     color: black;
     border: 2px solid #4186f4;
     transition-duration: 0.3s;
-    margin: 0 3vmax 0 3vmax;
+    margin: 0.2vw 3vmax 0 3vmax;
     outline: none;
 }
 
@@ -48,14 +47,15 @@ button:hover.header-button {
 }
 
 #tabs{
+    display: block;
     margin: 5%;
-    margin-top: 11.5vw;
+    margin-top: 8.2vw;
 }
 
 #middle {
     display: block;
     margin: 5%;
-    margin-top: 11.5vw;
+    margin-top: 8.2vw;
 }
 
 .tab-btn {
