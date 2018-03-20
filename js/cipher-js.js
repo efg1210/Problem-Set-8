@@ -125,17 +125,19 @@ function findKey(key){
   for(var i = 0; i < key.length; i++){
     var currentChar = key.charAt(i);
 
-    if(ALPHABET.indexOf(currentChar) > 0){
+    if(ALPHABET.indexOf(currentChar) >= 0){
 
       var index = ALPHABET.indexOf(currentChar);
       newKeyArray.push(index);
 
-    }else if(alphabet.indexOf(currentChar) > 0){
+    }else if(alphabet.indexOf(currentChar) >= 0){
 
       var index = alphabet.indexOf(currentChar);
       newKeyArray.push(index);
     }
   }
+  showResult(newKeyArray[0]);
+  showResult(newKeyArray[1]);
   return newKeyArray;
 }
 
