@@ -9,22 +9,27 @@ function submit1(e){
   var message = String(e.target.message.value);
   var type = e.target.type.value;
   var direction = e.target.direction.value;
-  var key = prompt("Key:");
+  var key;
+  /*
+  do{
+  */
+    key = prompt("Key:");
+    /*
+    console.log(type);
+    console.log(isNaN(parseInt(key)));
+    console.log(!(type == "c" && !isNaN(parseInt(key))));
+    //done until this is true
+  }while((type == "c" && !isNaN(parseInt(key))) || (type == "v" && isNaN(parseInt(key)) && message.length >= key.length));
+  */
 
   if(type == "c" && direction == "encode"){
     key = parseInt(key);
-    if(!isNaN(key)){
-      showResult(caesarEncrypt(message, key));
-    }
+    showResult(caesarEncrypt(message, key));
   }else if(type == "c" && direction == "decode"){
     key = parseInt(key);
-    if(!isNaN(key)){
-      showResult(caesarDecrypt(message, key));
-    }
+    showResult(caesarDecrypt(message, key));
   }else if(type == "v" && direction == "encode"){
-    if(isNaN(parseInt(key))){
-      showResult(vigEncrypt(message, key));
-    }
+    showResult(vigEncrypt(message, key));
   }
 }
 
@@ -115,9 +120,30 @@ function caesarDecrypt(message, key) {
     return encryptedResult;
 }
 
-function vigEncrypt(message, key){
-  
+function findKey(key){
+  var newKeyArray = [];
+  for(var i = 0; i < key.length; i++){
+    var currentChar = key.charAt(i);
 
+    if(ALPHABET.indexOf(currentChar) > 0){
+
+      var index = ALPHABET.indexOf(currentChar);
+      newKeyArray.push(index);
+
+    }else if(alphabet.indexOf(currentChar) > 0){
+
+      var index = alphabet.indexOf(currentChar);
+      newKeyArray.push(index);
+    }
+  }
+  return newKeyArray;
+}
+
+function vigEncrypt(message, key){
+
+  var newKey = findKey(key);
+
+  var encryptedResult = "";
   for(var i = 0; i < message.length; i++)
   {
       // Get the character in the original message
