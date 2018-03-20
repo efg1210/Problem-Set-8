@@ -30,6 +30,8 @@ function submit1(e){
     showResult(caesarDecrypt(message, key));
   }else if(type == "v" && direction == "encode"){
     showResult(vigEncrypt(message, key));
+  }else if(type == "v" && direction == "decode"){
+    showResult(vigDecrypt(message, key));
   }
 }
 
@@ -136,18 +138,16 @@ function findKey(key){
       newKeyArray.push(index);
     }
   }
-  showResult(newKeyArray[0]);
-  showResult(newKeyArray[1]);
+  console.log(newKeyArray);
   return newKeyArray;
 }
 
 function vigEncrypt(message, key){
-
   var newKey = findKey(key);
-
   var encryptedResult = "";
   for(var i = 0; i < message.length; i++)
   {
+      var keyIndex = i % newKey.length
       // Get the character in the original message
       var originalCharacter = message.charAt(i);
 
@@ -157,7 +157,7 @@ function vigEncrypt(message, key){
         var alphabeticIndex = ALPHABET.indexOf(originalCharacter);
         if(alphabeticIndex >= 0){
             // Compute new index
-            var newIndex = alphabeticIndex + key;
+            var newIndex = alphabeticIndex + newKey[keyIndex];
             newIndex = newIndex % ALPHABET.length;
 
             // Get the new character
@@ -170,7 +170,51 @@ function vigEncrypt(message, key){
         var alphabeticIndex = alphabet.indexOf(originalCharacter);
         if(alphabeticIndex >= 0){
             // Compute new index
-            var newIndex = alphabeticIndex + key;
+            var newIndex = alphabeticIndex + newKey[keyIndex];
+            newIndex = newIndex % alphabet.length;
+
+            // Get the new character
+            var newCharacter = alphabet.charAt(newIndex);
+
+            // Add the new shifted character to the encrypted result
+            encryptedResult += newCharacter
+        }
+      }else{
+        encryptedResult += originalCharacter;
+      }
+  }
+  return encryptedResult;
+}
+
+function vigDecrypt(message, key){
+  var newKey = findKey(key);
+  var encryptedResult = "";
+  for(var i = 0; i < message.length; i++)
+  {
+      var keyIndex = i % newKey.length
+      // Get the character in the original message
+      var originalCharacter = message.charAt(i);
+
+      // If it's an alphabetical character, we'll compute the new
+      // shifted character and add it to the encrypted result
+      if(ALPHABET.indexOf(originalCharacter) > 0){
+        var alphabeticIndex = ALPHABET.indexOf(originalCharacter);
+        if(alphabeticIndex >= 0){
+            // Compute new index
+            var newIndex = alphabeticIndex - newKey[keyIndex];
+            newIndex = newIndex % ALPHABET.length;
+
+            // Get the new character
+            var newCharacter = ALPHABET.charAt(newIndex);
+
+            // Add the new shifted character to the encrypted result
+            encryptedResult += newCharacter
+        }
+      }else if(alphabet.indexOf(originalCharacter) > 0){
+        var alphabeticIndex = alphabet.indexOf(originalCharacter);
+        if(alphabeticIndex >= 0){
+            // Compute new index
+            var newIndex = alphabeticIndex - newKey[keyIndex];
             newIndex = newIndex % alphabet.length;
 
             // Get the new character
