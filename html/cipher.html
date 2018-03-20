@@ -17,18 +17,18 @@
           <form onsubmit="submit1(event)">
             <textarea type="text" name="message" id="input-box" class="box" style="resize: none;" required></textarea>
 
-            <select name="type" id="type" class="between" required>
+            <select name="type" id="type" required>
                 <option disabled selected value>Select Type</option>
                 <option value="c">Caesar</option>
                 <option value="v">Vigen&eacutere</option>
             </select>
 
-            <select name="direction" id="direction" class="between" onchang="nameSubmit(event)" required>
+            <select name="direction" id="direction" onchange="nameSubmit(event)" required>
                 <option disabled selected value>Select Direction</option>
                 <option value="encode">Encode</option>
                 <option value="decode">Decode</option>
             </select>
-            <input type="submit" value="Encoder/Decoder" class="between">
+            <input type="submit" value="Encoder/Decoder">
           </form>
           <textarea id="result" style="resize: none;" readonly></textarea>
         </div>

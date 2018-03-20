@@ -236,7 +236,10 @@ function showResult(result){
 }
 
 function nameSubmit(e){
-  var direction = e.target.direction.value;
+  //var direction = e.target.direction.value;
+  console.log(direction);
+  direction = document.getElementById("direction").value;
+  console.log(direction);
   if(direction == "encode"){
     e.target.submit.value = "Encode!";
   }else if(direction == "decode"){
