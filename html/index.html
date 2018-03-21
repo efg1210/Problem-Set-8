@@ -20,11 +20,22 @@
           </div>
 
             <div id="c-tab" class="text-explain">
-                <p>This is a Caesar cipher.</p>
+                <p>
+                  Caesar cipher is a type of encryption where the letters are shifted over to the right based on a key.
+                  If the key is 1, A becomes B, B becomes C, etc.. With a key of 1, "HELLO" becomes "IFMMP." When the key is
+                  26, the key is essentiall 0, so A stays A and B stays B. If the key is over 26, the key goes back to the
+                  beginning. A key of 27 is essentially a key of 1. To decode, subtract the key from the message.
+                </p>
             </div>
 
             <div id="v-tab" class="text-explain">
-                <p>This is a Vigen&eacutere cipher.</p>
+                <p>
+                  Vigen&eacutere cipher is a type of encryption where the letter are shifted over to the right based on a key.
+                  Unlike Caesar cipher, this key is made of letter. These letter are turned into numebers, which are added to the
+                  number of the message. A key of "GA" becomes 6 and 0. "HELLO" would be 7, 4, 11, 11, and 14 as numbers. To
+                  get the encoded message, add 6 to the first letter, 0 to the next, 6 to the next, etc.. 7+6, 4+0, 11+6, 11+0, 14+6.
+                  This makes the secrect message "NERLU." To decode, subtract the key from the message.
+                </p>
             </div>
         </div>
 
