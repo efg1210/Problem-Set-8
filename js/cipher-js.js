@@ -7,11 +7,15 @@ function submit1(e){
   //console.log(e.target.message.value);
 
   var message = String(e.target.message.value);
+  if(message == ""){
+    var oops = true;
+    alert("Please enter at least one character into the textbox.");
+  }
   var type = e.target.type.value;
   var direction = e.target.direction.value;
   var key;
 
-
+if(!oops){
   do{
     key = prompt("Key:");
     //console.log(type);
@@ -19,6 +23,8 @@ function submit1(e){
     //console.log(!(type == "c" && !isNaN(parseInt(key))));
     //done until this is true
   }while((type == "c" && isNaN(parseInt(key))) || (type == "v" && !isNaN(parseInt(key)) && message.length >= key.length));
+}
+
 
 
   if(type == "c" && direction == "encode"){
@@ -249,9 +255,11 @@ function nameSubmit(e){
     document.getElementById("submit").value = "Decode!";
   }
 }
-
+/*
 function reset1(){
   document.getElementById("type").value = "Select Type";
   document.getElementById("direction").value = "Select Direction";
   document.getElementById("submit").value = "Encoder/Decoder";
+  document.getElementById("result").value = "";
 }
+*/
