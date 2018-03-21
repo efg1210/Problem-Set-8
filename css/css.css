@@ -115,12 +115,12 @@ select, input {
 
 #input-box {
   margin-bottom: 3%;
-  /*height: 10.75vw;*/
+  height: 10.75vw;
 }
 
 #result {
   margin-top: 3%;
-  /*height: 10.75vw;*/
+  height: 10.75vw;
 }
 
 #direction{
