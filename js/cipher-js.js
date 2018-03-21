@@ -249,3 +249,9 @@ function nameSubmit(e){
     document.getElementById("submit").value = "Decode!";
   }
 }
+
+function reset1(){
+  document.getElementById("type").value = "Select Type";
+  document.getElementById("direction").value = "Select Direction";
+  document.getElementById("submit").value = "Encoder/Decoder";
+}
